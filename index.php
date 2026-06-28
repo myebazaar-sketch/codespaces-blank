@@ -41,8 +41,8 @@ $articles = [
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title><?= htmlspecialchars($siteName, ENT_QUOTES, 'UTF-8') ?> | <?= htmlspecialchars($tagline, ENT_QUOTES, 'UTF-8') ?></title>
-  <meta name="description" content="Authentic export-quality Indian spices, luxury blends, and gift-ready premium products for chefs, restaurants, and home kitchens.">
+  <title><?= htmlspecialchars($siteName, ENT_QUOTES, 'UTF-8') ?></title>
+  <meta name="description" content="Al Saba Spices offers authentic Indian spices and food products with rich flavor and quality.">
   <?php
     $siteUrl = (isset($_SERVER['HTTP_HOST']) ? ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] : 'https://example.com');
     $pageUrl = $siteUrl . strtok($_SERVER['REQUEST_URI'], '?');
@@ -88,7 +88,7 @@ $articles = [
 </head>
 <body>
   <nav class="topbar">
-    <a class="topbar-brand" href="/" aria-label="Al Saba Spices">
+    <a class="topbar-brand" href="#home" aria-label="Al Saba Spices">
       <img src="/assets/brand-mark.svg" alt="Al Saba Spices logo">
     </a>
     <div class="topbar-links">
@@ -109,35 +109,6 @@ $articles = [
         <div class="hero-actions">
           <a class="btn" href="#products">Explore Premium Collection</a>
           <a class="btn" href="#shop">Buy it now</a>
-        </div>
-        <div class="hero-featured-row">
-          <div class="hero-feature-card hero-feature-highlight">
-            <span class="hero-feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M12 2l2.76 5.59L21.6 8.24l-4.38 4.27L18.28 21 12 17.77 5.72 21l1.06-8.49L2.4 8.24l6.84-0.65L12 2z" fill="#7A2E1D"/>
-              </svg>
-            </span>
-            <strong>Export-ready quality</strong>
-            <span>Premium spices packed for global delivery.</span>
-          </div>
-          <div class="hero-feature-card">
-            <span class="hero-feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M12 2C9.24 2 7 4.24 7 7c0 1.93 1.29 3.56 3.06 4.19C10.03 12.42 9 13.87 9 15.5c0 1.93 1.57 3.5 3.5 3.5S16 17.43 16 15.5c0-1.63-1.03-3.08-1.94-4.31C15.71 10.56 17 8.93 17 7c0-2.76-2.24-5-5-5z" fill="#7A2E1D"/>
-              </svg>
-            </span>
-            <strong>Authentic Indian blends</strong>
-            <span>Curated from traditional recipes and premium ingredients.</span>
-          </div>
-          <div class="hero-feature-card">
-            <span class="hero-feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M12 12c2.76 0 5-2.24 5-5S14.76 2 12 2 7 4.24 7 7s2.24 5 5 5zm-6 9c0-2.76 4.48-4 6-4s6 1.24 6 4v1H6v-1z" fill="#7A2E1D"/>
-              </svg>
-            </span>
-            <strong>Wholesale support</strong>
-            <span>Flexible order fulfillment for retail and hospitality.</span>
-          </div>
         </div>
         <div class="hero-stats">
           <div>
@@ -164,17 +135,6 @@ $articles = [
       </div>
     </div>
   </header>
-
-  <section id="about" class="section about-section">
-    <div class="section-heading">
-      <p class="section-tag">About the Brand</p>
-      <h2>Al Saba Spices: Premium Indian Spice Exports</h2>
-    </div>
-    <div class="about-copy">
-      <p>Al Saba Spices delivers premium export-quality Indian spices, signature blends, and gift-ready collections for chefs, restaurants, and premium homes. We focus on authenticity, traceability, and refined flavor.</p>
-      <p>Our curated spices bring authentic aroma and color to every recipe, with a portfolio built for luxury gifting, hospitality, and export markets.</p>
-    </div>
-  </section>
 
   <main>
     <section class="section intro">
