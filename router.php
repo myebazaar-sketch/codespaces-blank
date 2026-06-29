@@ -18,5 +18,11 @@ if (preg_match('#^/article/([^/]+)/?$#', $uri, $m)) {
     exit;
 }
 
+// Route /faq or /faq.php to faq.php
+if ($uri === '/faq' || $uri === '/faq.php') {
+    require __DIR__ . '/faq.php';
+    exit;
+}
+
 // Fallback to index.php for all other requests
 require __DIR__ . '/index.php';

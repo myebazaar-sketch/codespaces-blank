@@ -17,6 +17,12 @@ if (!$article) {
     echo '<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Article not found</title></head><body><h1>Article not found</h1><p>The requested article is not available.</p><p><a href="/">Return home</a></p></body></html>';
     exit;
 }
+
+function renderArticleContent(string $content): string
+{
+    $allowedTags = '<h1><h2><h3><h4><p><strong><em><ul><ol><li><br><a>';
+    return strip_tags($content, $allowedTags);
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -63,12 +69,18 @@ if (!$article) {
       <img src="/assets/brand-mark.svg" alt="Al Saba Spices logo">
       <div class="brand-name">Al Saba Spices</div>
     </a>
+    <div class="topbar-links">
+      <a href="/">Home</a>
+      <a href="/faq.php">FAQ</a>
+    </div>
   </nav>
   <main class="section" style="padding-top: 6rem; max-width: 840px; margin: 0 auto;">
     <article class="article-card" style="width: 100%; min-width: auto; height: auto;">
       <img loading="lazy" decoding="async" src="<?= htmlspecialchars($article['image'], ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($article['title'], ENT_QUOTES, 'UTF-8') ?>">
       <h1><?= htmlspecialchars($article['title'], ENT_QUOTES, 'UTF-8') ?></h1>
-      <p style="margin-top: 1rem; color: #F7EEDC; line-height: 1.9;"><?= htmlspecialchars($article['content'], ENT_QUOTES, 'UTF-8') ?></p>
+      <div class="article-body" style="margin-top: 1rem; color: #F7EEDC; line-height: 1.9;">
+        <?= renderArticleContent($article['content']) ?>
+      </div>
       <p style="margin-top: 1.5rem;"><a class="btn" href="/">Back to home</a></p>
     </article>
   </main>

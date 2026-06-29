@@ -24,6 +24,7 @@ $galleryImages = [
     'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=80',
 ];
 require __DIR__ . '/data/articles.php';
+require __DIR__ . '/data/faqs.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -84,6 +85,7 @@ require __DIR__ . '/data/articles.php';
       <a href="#products">Products</a>
       <a href="#shop">Shop</a>
       <a href="#gallery">Gallery</a>
+      <a href="/faq.php">FAQ</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
@@ -263,6 +265,21 @@ require __DIR__ . '/data/articles.php';
       </div>
     </div>
   </div>
+
+  <section id="faq" class="section faq-section" style="margin-top:2rem;">
+    <div class="section-heading">
+      <p class="section-tag">Help</p>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-list" style="max-width:900px; margin:0 auto;">
+      <?php foreach ($faqs as $item): ?>
+        <details class="faq-item" style="margin-bottom:1rem; background:rgba(255,255,255,0.02); padding:1rem; border-radius:6px;">
+          <summary style="font-weight:600; cursor:pointer;"><?= htmlspecialchars($item['question'], ENT_QUOTES, 'UTF-8') ?></summary>
+          <div style="margin-top:0.5rem; color:#F7EEDC;"><?= htmlspecialchars($item['answer'], ENT_QUOTES, 'UTF-8') ?></div>
+        </details>
+      <?php endforeach; ?>
+    </div>
+  </section>
 
   <footer class="footer">
     <p>Al Saba Spices</p>
